@@ -10,7 +10,7 @@ https://docs.yoctoproject.org/dev/ref-manual/system-requirements.html
 1. Install [Exein Layer for Yocto](https://github.com/exein-io/meta-exein?tab=readme-ov-file)
 2. Download the `meta-config` layer
 3. Add the `meta-config` layer to your `bblayers.conf` file
-4. Add the following lines to `local.conf' file
+4. Add the following lines to `local.conf` file
 ```
 IMAGE_ROOTFS_SIZE = "524288"
 IMAGE_OVERHEAD_FACTOR = "1.2"
@@ -46,7 +46,7 @@ To exit the qemu session:
 `Ctrl+A, X`
 
 ## Run Pulsar
-launch `pulsard`
+Launch `pulsard`
 
 ## List of configurations
 The meta-config layer implements the following configurations:

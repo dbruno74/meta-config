@@ -1,0 +1,25 @@
+#!/bin/sh
+# udhcpc default script by busybox
+
+RESOLV_CONF="/etc/resolv.conf"
+
+case "$1" in
+    deconfig)
+        ip addr flush dev $interface
+        ;;
+    bound|renew|rebind)
+        ip addr flush dev $interface
+        ip addr add $ip/$subnet dev $interface
+        ip route add default via $router
+        echo "Updating $RESOLV_CONF with new DNS servers..."
+        echo -n > $RESOLV_CONF
+        for i in $dns; do
+            echo "nameserver $i" >> $RESOLV_CONF
+        done
+        ;;
+    deconfig)
+        echo -n > $RESOLV_CONF
+        ;;
+esac
+exit 0
+

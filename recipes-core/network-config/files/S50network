@@ -1,0 +1,9 @@
+#!/bin/sh
+# Simple script to bring up eth0 and start DHCP at boot
+
+# Bring up interface
+ip link set eth0 up
+
+# Start DHCP client (BusyBox udhcpc)
+udhcpc -i eth0 -v
+

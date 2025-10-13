@@ -38,13 +38,15 @@ To boot your image with qemu, run the following command
 runqemu nographic slirp qemuparams="-m 2048"
 ```
 Login with root (no password), or ssh to the running qemu image from your host with this command:
-`ssh -o StrictHostKeyChecking=no root@127.0.0.1 -p 2222`
+```
+ssh -o StrictHostKeyChecking=no root@127.0.0.1 -p 2222
+```
 
 To exit the qemu session:
 `Ctrl+A, X`
 
-
-## Run pulsar
+## Run Pulsar
+launch `pulsard`
 
 ## List of configurations
 The meta-config layer implements the following configurations:

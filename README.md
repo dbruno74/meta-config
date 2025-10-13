@@ -32,8 +32,22 @@ IMAGE_INSTALL:append = " openssh openssh-sshd openssh-scp openssh-keygen file bi
     bitbake core-image-minimal
     ```
 
-## Configurations
-The meta-config layer implements the following configurations
+## Boot the image with qemu
+To boot your image with qemu, run the following command
+```
+runqemu nographic slirp qemuparams="-m 2048"
+```
+Login with root (no password), or ssh to the running qemu image from your host with this command:
+`ssh -o StrictHostKeyChecking=no root@127.0.0.1 -p 2222`
+
+To exit the qemu session:
+`Ctrl+A, X`
+
+
+## Run pulsar
+
+## List of configurations
+The meta-config layer implements the following configurations:
 ### included packages
 - openssl
 - openssh server

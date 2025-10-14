@@ -30,6 +30,12 @@ case "$1" in
         mount -t cgroup2 none /sys/fs/cgroup
     fi
 
+    # Mount tracefs if not already mounted
+    if ! mount | grep -q '/sys/kernel/tracing'; then
+        mkdir -p /sys/kernel/tracing
+        mount -t tracefs tracefs /sys/kernel/tracing
+    fi
+
     # Create /lib64 and symlink all /lib/* there
     if [ ! -d /lib64 ]; then
         mkdir -p /lib64

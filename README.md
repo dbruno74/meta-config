@@ -28,8 +28,14 @@ PREMIRRORS:prepend = "\
 IMAGE_INSTALL:append = " openssh openssh-sshd openssh-scp openssh-keygen file binutils glibc-utils glibc glibc-utils glibc-dev libgcc openssl sqlite3 busybox"
 ```
 5. Build your image:
+    For a qemu image:
     ```bash
     bitbake core-image-minimal
+    ```
+
+    For a Virtual Box compatible image:
+    ```bash
+    bitbake core-image-minimal-vb
     ```
 
 ## Boot the image with qemu
@@ -42,11 +48,29 @@ Login with root (no password), or ssh to the running qemu image from your host w
 ssh -o StrictHostKeyChecking=no root@127.0.0.1 -p 2222
 ```
 
-To exit the qemu session:
-`Ctrl+A, X`
+## Boot the image with Virtual Box
+To boot your image with Virtual Box
+- Launch Virtual Box
+- Create a New Machine
+   - VM Name: yocto-vb
+   - Specify virtual hard disk - Use an Existing Virtual Hard Disk File - select <YOCTO_BUILD_DIR>/tmp/deploy/images/qemux86-64/yocto-vbx86-64.wic.vdi
+   - Press OK
+- Go to Settings - System - tick UEFI
+- Go to Network - Attached to Bridge Adapter (select you adapter Name)
+- Go to Network - Promiscuous Mode: Allow All
+- Press OK
+- Run the yocto-vb Virtual Machine
+
+Login with root (no password), or ssh to the running image from your host with this command:
+```
+ssh -o StrictHostKeyChecking=no root@yocto-vb.local
+```
 
 ## Run Pulsar
 Launch `pulsard`
+
+## Prebuilt Yocto images
+Prebuilt Yocto images for qemu and Virtual Box are available in [yocto-pulsar-images](https://github.com/dbruno74/yocto-pulsar-images) repo
 
 ## List of configurations
 The meta-config layer implements the following configurations:

@@ -39,7 +39,7 @@ IMAGE_INSTALL:append = " openssh openssh-sshd openssh-scp openssh-keygen file bi
     ```
 
 ## Boot the image with qemu
-To boot your image with qemu, run the following command
+To boot your image with qemu, first create (or re-create) the image with `bitbake core-image-minimal`, then run the following command
 ```
 runqemu nographic slirp qemuparams="-m 2048"
 ```
@@ -47,6 +47,7 @@ Login with root (no password), or ssh to the running qemu image from your host w
 ```
 ssh -o StrictHostKeyChecking=no root@127.0.0.1 -p 2222
 ```
+To exit the qemu session, type `Ctrl+A, X`
 
 ## Boot the image with Virtual Box
 To boot your image with Virtual Box

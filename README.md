@@ -1,8 +1,6 @@
 # meta-config
 meta-config is a Yocto Layer for the configuration of a core-minimal Yocto image, suitable for running [Pulsar](https://github.com/exein-io/pulsar) and the [Exein Runtime Agent](https://www.exein.io/platform/exein-runtime).
 
-> **Note:** `meta-config` is tested on Yocto Scarthgap.
-
 ## Usage
 Before start: review the Yocto system requirements at
 https://docs.yoctoproject.org/dev/ref-manual/system-requirements.html

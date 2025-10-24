@@ -66,12 +66,8 @@ Login with root (no password), or ssh to the running image from your host with t
 ```
 ssh -o StrictHostKeyChecking=no root@yocto-vb.local
 ```
-
-## Run Pulsar
-Launch `pulsard`
-
 ## Prebuilt Yocto images
-Prebuilt Yocto images for qemu and Virtual Box are available in [yocto-pulsar-images](https://github.com/dbruno74/yocto-pulsar-images) repo
+Prebuilt Yocto images for qemu and Virtual Box are available in [yocto-pulsar-images](https://github.com/dbruno74/yocto-pulsar-images) repo.
 
 ## List of configurations
 The meta-config layer implements the following configurations:
